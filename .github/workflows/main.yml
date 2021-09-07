@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "* * * * *"
 
+env:
+  TZ: 'Asia/Shanghai'
+  
 jobs:
 
   build:
