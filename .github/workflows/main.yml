@@ -2,7 +2,7 @@ name: uestc_temperature
 
 on:
   schedule:
-    - cron: "0 1,16 * * *"
+    - cron: "* * * * *"
 
 jobs:
 
