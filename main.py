@@ -7,7 +7,7 @@ class Report:
 
     def __init__(self) -> None:
         """设定固定的参数。"""
-        tz = datetime.timezone(timedelta(hours=8))
+        tz = datetime.timezone(datetime.timedelta(hours=8))
         datetime.datetime.now(tz)
         
         self.cookies = sys.argv[1].split('#')
