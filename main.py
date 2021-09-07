@@ -117,7 +117,7 @@ class Report:
         """
         # 尝试对上报站点发起请求。
         response = requests.post(
-            url, headers=self.post_headers, data=str(data))
+            url, headers=self.post_headers, data=str(data).encode('utf-8'))
         if response.status_code != 200:
             self.fail += 1
             print('Failed: Your network has some trouble.')
