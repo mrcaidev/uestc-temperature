@@ -1,20 +1,36 @@
 import requests
 import sys
-
+import datetime
 
 class Report:
     """自动完成体温上报。"""
 
     def __init__(self) -> None:
         """设定固定的参数。"""
+        tz = datetime.timezone(timedelta(hours=8))
+        datetime.datetime.now(tz)
+        
         self.cookies = sys.argv[1].split('#')
 
-        self.headers = {
+        self.get_headers = {
             'content-type': 'application/json',
             'encode': 'false',
             'Connection': 'keep-alive',
             'x-tag': 'flyio',
             'charset': 'utf-8',
+            'Content-Length': '2',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38',
+            'Referer': 'https://servicewechat.com/wx521c0c16b77041a0/28/page-frame.html',
+            'cookie': None
+        }
+        
+        self.post_headers = {
+            'content-type': 'application/json',
+            'encode': 'false',
+            'Connection': 'keep-alive',
+            'x-tag': 'flyio',
+            'charset': 'utf-8',
+            'Content-Length': '220',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38',
             'Referer': 'https://servicewechat.com/wx521c0c16b77041a0/28/page-frame.html',
             'cookie': None
@@ -52,7 +68,7 @@ class Report:
         - 3 : 未上报，在校
         """
         # 尝试对查询站点发起请求。
-        response = requests.get(self.check_url, headers=self.headers)
+        response = requests.get(self.check_url, headers=self.get_headers)
         if response.status_code != 200:
             self.fail += 1
             print('Failed: Your network has some trouble.')
@@ -108,7 +124,7 @@ class Report:
         """
         # 尝试对上报站点发起请求。
         response = requests.post(
-            url, headers=self.headers, data=data)
+            url, headers=self.post_headers, data=data)
         if response.status_code != 200:
             self.fail += 1
             print('Failed: Your network has some trouble.')
