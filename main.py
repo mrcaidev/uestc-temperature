@@ -130,7 +130,6 @@ class Report:
             print('Failed: Not your problem.')
         elif report_status == False:
             self.fail += 1
-            print(response.json())
             print('Failed: Data has been posted, but failed at remote website.')
         else:
             self.success += 1
