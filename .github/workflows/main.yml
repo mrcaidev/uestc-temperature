@@ -1,0 +1,15 @@
+name: uestc_temperature
+
+on:
+  schedule:
+    - cron: "* * * * *"
+
+jobs:
+
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run Main
+      run: python main.py ${{ secrets.COOKIE }}
