@@ -149,7 +149,8 @@ class Report:
         for index, cookie in enumerate(self.cookies):
             print(f'Reporting for student No.{index+1}...', end='')
             # 为这位同学定制请求头。
-            self.headers.update({'cookie': cookie})
+            self.get_headers.update({'cookie': cookie})
+            self.post_headers.update({'cookie': cookie})
             status = self.check_status()
             # 如果未上报且不在校：
             if status == 2:
