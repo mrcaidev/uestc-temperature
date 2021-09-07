@@ -1,6 +1,7 @@
 name: uestc_temperature
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "* * * * *"
 
