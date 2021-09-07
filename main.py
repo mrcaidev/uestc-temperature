@@ -49,7 +49,7 @@ class Report:
         response = requests.get(self.check_url, headers=self.headers)
         if response.status_code != 200:
             self.fail += 1
-            print('失败：你的网络出了一些问题。')
+            print('Failed: Your network has some trouble.')
             return 0
 
         # 解析查询到的字典。
@@ -57,7 +57,7 @@ class Report:
         if data == None:
             self.fail += 1
             print(
-                '失败：最大的可能是cookie错了。cookie应该形如：JSESSIONID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx')
+                'Failed: Cookie should be like: JSESSIONID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx')
             return 0
 
         # 检查上报次数。
@@ -65,12 +65,12 @@ class Report:
         # 如果找不到该字段：
         if applied_times == None:
             self.fail += 1
-            print('失败：大概率是学校那边的问题。')
+            print('Failed: Not your problem.')
             return 0
         # 如果已经上报过了：
         elif applied_times != 0:
             self.done += 1
-            print('该同学已经上报过了。')
+            print('Already reported.')
             return 1
         # 如果还没上报：
         else:
@@ -79,7 +79,7 @@ class Report:
             # 如果找不到该字段：
             if school_status == None:
                 self.fail += 1
-                print('失败：大概率是学校那边的问题。')
+                print('Failed: Not your problem.')
                 return 0
             # 如果不在校：
             elif school_status == 0:
@@ -89,7 +89,7 @@ class Report:
                 return 3
             else:
                 self.fail += 1
-                print('失败：未知的在校状态。')
+                print('Failed: Invalid school status.')
                 return 0
 
     def do_report(self, url, data) -> None:
@@ -105,26 +105,26 @@ class Report:
             url, headers=self.headers, data=data)
         if response.status_code != 200:
             self.fail += 1
-            print('失败：你的网络出了一些问题。')
+            print('Failed: Your network has some trouble.')
             return
 
         # 解析返回的状态字典。
         report_status: bool = response.json().get('status', None)
         if report_status == None:
             self.fail += 1
-            print('失败：大概率是学校那边的问题。')
+            print('Failed: Not your problem.')
         elif report_status == False:
             self.fail += 1
-            print('失败：数据已上传，但未上报成功，建议手动确认。')
+            print('Failed: Data has been posted, but failed at remote website.')
         else:
             self.success += 1
-            print('成功。')
+            print('Success.')
 
     def run(self):
         print('-' * 60)
         # 遍历每位学生。
         for index, cookie in enumerate(self.cookies):
-            print(f'正在为第{index+1}位同学上报...', end='')
+            print(f'Reporting for student No.{index+1}...', end='')
             # 为这位同学定制请求头。
             self.headers.update({'cookie': cookie})
             status = self.check_status()
@@ -141,7 +141,7 @@ class Report:
 
         print('-' * 60)
         print(
-            f'已完成今天的上报，{self.success}人成功，{self.done}人已经上报，{self.fail}人失败。')
+            f'Finished: {self.success} success, {self.done} done, {self.fail} failed.')
 
 
 if __name__ == '__main__':
