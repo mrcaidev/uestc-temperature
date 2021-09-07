@@ -3,7 +3,7 @@ name: uestc_temperature
 on:
   workflow_dispatch:
   schedule:
-    - cron: "* * * * *"
+    - cron: "0 16 * * *"
 
 env:
   TZ: 'Asia/Shanghai'
