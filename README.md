@@ -26,7 +26,7 @@
 
 ## 使用方法
 
-1. 开始之前，你需要先下载这两个软件：
+1. 开始之前，你需要先下载这两个软件（教程结束后可以卸载）：
 
      - [微信电脑版](https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe)
      - [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe)
@@ -78,7 +78,7 @@
 
           ![填入信息](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/13.png)
 
-4. 至此配置全部完成，你可以在第二天检查是否成功填报，微信电脑版和Fiddler如果不想要的话，也可以卸载掉；如果没有，请通过`Issues`联系我。
+4. 至此配置全部完成，你可以在第二天检查是否成功填报；如果没有，请通过`Issues`联系我。微信电脑版和Fiddler现在可以卸载。
 
 ---
 
