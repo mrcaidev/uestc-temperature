@@ -2,21 +2,28 @@ import requests
 import sys
 import datetime
 
+
 class Report:
     """自动完成体温上报。"""
 
     def __init__(self) -> None:
         """设定固定的参数。"""
+        # TODO Simplify.
+        # 固定时区。
         tz = datetime.timezone(datetime.timedelta(hours=8))
         datetime.datetime.now(tz)
-        
+
+        # 读取命令行的 Cookies。（存放在仓库的`Secrets`中）
         self.cookies = sys.argv[1].split('#')
 
+        # get 所用的请求头。
         self.get_headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38',
             'cookie': None
         }
-        
+
+        # TODO Simplify.
+        # post 所用的请求头。
         self.post_headers = {
             'content-type': 'application/json',
             'encode': 'false',
@@ -29,13 +36,16 @@ class Report:
             'cookie': None
         }
 
+        # 检查学生状态的站点。
         self.check_url = 'https://jzsz.uestc.edu.cn/wxvacation/checkRegisterNew'
 
+        # 未返校学生的站点和数据。
         self.unreturned_url = ''  # TODO Not verified yet.
         self.unreturned_data = {
             # TODO Not verified yet.
         }
 
+        # 返校学生的站点和数据。
         self.returned_url = 'https://jzsz.uestc.edu.cn/wxvacation/monitorRegisterForReturned'
         self.returned_data = {
             'healthCondition': '正常',
@@ -45,6 +55,7 @@ class Report:
             'location': '四川省成都市郫都区银杏大道'
         }
 
+        # 记录上报结果。
         self.success = 0
         self.done = 0
         self.fail = 0
@@ -61,7 +72,13 @@ class Report:
         - 3 : 未上报，在校
         """
         # 尝试对查询站点发起请求。
-        response = requests.get(self.check_url, headers=self.get_headers)
+        try:
+            response = requests.get(self.check_url, headers=self.get_headers)
+        except Exception as e:
+            print(e)
+            return 0
+
+        # 如果状态码不为 200：
         if response.status_code != 200:
             self.fail += 1
             print('Failed: Your network has some trouble.')
@@ -102,6 +119,7 @@ class Report:
             # 如果在校：
             elif school_status == 1:
                 return 3
+            # 如果出现其他未知的数字：
             else:
                 self.fail += 1
                 print('Failed: Invalid school status.')
@@ -116,8 +134,14 @@ class Report:
         :param data: 数据，包括体温、地点等。
         """
         # 尝试对上报站点发起请求。
-        response = requests.post(
-            url, headers=self.post_headers, data=str(data).encode('utf-8'))
+        try:
+            response = requests.post(
+                url, headers=self.post_headers, data=str(data).encode('utf-8'))
+        except Exception as e:
+            print(e)
+            return
+
+        # 如果状态码不为 200：
         if response.status_code != 200:
             self.fail += 1
             print('Failed: Your network has some trouble.')
@@ -125,12 +149,15 @@ class Report:
 
         # 解析返回的状态字典。
         report_status: bool = response.json().get('status', None)
+        # 如果找不到该字段：
         if report_status == None:
             self.fail += 1
             print('Failed: Not your problem.')
+        # 如果上报失败：
         elif report_status == False:
             self.fail += 1
-            print('Failed: Data has been posted, but failed at remote website.')
+            print('Failed: Data is posted, but report status is False.')
+        # 如果上报成功：
         else:
             self.success += 1
             print('Success.')
@@ -155,6 +182,7 @@ class Report:
             else:
                 continue
 
+        # 提示结束。
         print('-' * 60)
         print(
             f'Finished: {self.success} success, {self.done} done, {self.fail} failed.')
