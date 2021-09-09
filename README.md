@@ -17,7 +17,7 @@
 电子科技大学（UESTC）每日体温自动填报。
 
 - **本项目仅适用于：微信小程序 ->  “uestc学生情况报送”！**
-- 工作流将自动在每日的**01:00**发起上报，并在**16:00**进行确认，全过程无需用户执行任何操作。
+- 工作流将自动在每日的**00:30**发起上报，全过程无需用户执行任何操作。
 - 本项目的思路有参考[checkmate1816/uestc_temperature_report](https://github.com/checkmate1816/uestc_temperature_report)，但使用了Python进行重构。
 - 对代码改进有任何好的建议，欢迎提`Issues`，或者直接`PR`！我期待看到不同的想法！
 - 如果对您有帮助，请顺手点个`Star`吧~
@@ -26,7 +26,7 @@
 
 ## 使用方法
 
-1. 开始之前，你需要先下载这两个软件：
+1. 开始之前，你需要先下载这两个软件（教程结束后可以卸载）：
 
      - [微信电脑版](https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe)
      - [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe)
@@ -78,7 +78,7 @@
 
           ![填入信息](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/13.png)
 
-4. 至此配置全部完成，你可以在第二天检查是否成功填报；如果没有，请通过`Issues`联系我。
+4. 至此配置全部完成，你可以在第二天检查是否成功填报；如果没有，请通过`Issues`联系我。微信电脑版和Fiddler现在可以卸载。
 
 ---
 
