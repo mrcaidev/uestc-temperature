@@ -1,6 +1,6 @@
 import requests
 import sys
-import datetime
+# import datetime
 
 
 class Report:
@@ -8,36 +8,14 @@ class Report:
 
     def __init__(self) -> None:
         """设定固定的参数。"""
-        # TODO Simplify.
-        # 固定时区。
-        tz = datetime.timezone(datetime.timedelta(hours=8))
-        datetime.datetime.now(tz)
 
         # 读取命令行的 Cookies。（存放在仓库的`Secrets`中）
         self.cookies = sys.argv[1].split('#')
 
-        # get 所用的请求头。
-        self.get_headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38',
-            'cookie': None
-        }
-
-        # TODO Simplify.
-        # post 所用的请求头。
-        self.post_headers = {
+        # 请求头，后续会加入 cookie。
+        self.headers = {
             'content-type': 'application/json',
-            'encode': 'false',
-            'Connection': 'keep-alive',
-            'x-tag': 'flyio',
-            'charset': 'utf-8',
-            'Content-Length': '220',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36 Edg/93.0.961.38',
-            'Referer': 'https://servicewechat.com/wx521c0c16b77041a0/28/page-frame.html',
-            'cookie': None
         }
-
-        # 检查学生状态的站点。
-        self.check_url = 'https://jzsz.uestc.edu.cn/wxvacation/checkRegisterNew'
 
         # 未返校学生的站点和数据。
         self.unreturned_url = ''  # TODO Not verified yet.
@@ -73,15 +51,17 @@ class Report:
         """
         # 尝试对查询站点发起请求。
         try:
-            response = requests.get(self.check_url, headers=self.get_headers)
+            response = requests.get(
+                'https://jzsz.uestc.edu.cn/wxvacation/checkRegisterNew', headers=self.headers)
         except Exception as e:
+            self.fail += 1
             print(e)
             return 0
 
         # 如果状态码不为 200：
         if response.status_code != 200:
             self.fail += 1
-            print('Failed: Your network has some trouble.')
+            print('Failed: Network trouble.')
             return 0
 
         # 解析查询到的字典。
@@ -136,15 +116,16 @@ class Report:
         # 尝试对上报站点发起请求。
         try:
             response = requests.post(
-                url, headers=self.post_headers, data=str(data).encode('utf-8'))
+                url, headers=self.headers, data=str(data).encode('utf-8'))
         except Exception as e:
+            self.fail += 1
             print(e)
             return
 
         # 如果状态码不为 200：
         if response.status_code != 200:
             self.fail += 1
-            print('Failed: Your network has some trouble.')
+            print('Failed: Network trouble.')
             return
 
         # 解析返回的状态字典。
@@ -156,7 +137,7 @@ class Report:
         # 如果上报失败：
         elif report_status == False:
             self.fail += 1
-            print('Failed: Data is posted, but report status is False.')
+            print('Failed: Data posted, but report failed.')
         # 如果上报成功：
         else:
             self.success += 1
@@ -168,8 +149,7 @@ class Report:
         for index, cookie in enumerate(self.cookies):
             print(f'Reporting for student No.{index+1}...', end='')
             # 为这位同学定制请求头。
-            self.get_headers.update({'cookie': cookie})
-            self.post_headers.update({'cookie': cookie})
+            self.headers.update({'cookie': cookie})
             status = self.check_status()
             # 如果未上报且不在校：
             if status == 2:
