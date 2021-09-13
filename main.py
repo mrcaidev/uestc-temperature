@@ -1,5 +1,6 @@
 import requests
 import sys
+import time
 
 
 class Report:
@@ -143,7 +144,6 @@ class Report:
             print('Success.')
 
     def run(self):
-        print('-' * 60)
         # 遍历每位学生。
         for index, cookie in enumerate(self.cookies):
             print(f'Reporting for student No.{index+1}...', end='')
@@ -161,12 +161,20 @@ class Report:
             else:
                 continue
 
-        # 提示结束。
-        print('-' * 60)
-        print(
-            f'Finished: {self.success} success, {self.done} done, {self.fail} failed.')
-
 
 if __name__ == '__main__':
+    # 提示开始。
+    start = time.time()
+    print('-' * 60)
+    print(time.strftime('%F %H:%M:%S').center(60))
+    print('------------'.center(60))
+
+    # 运行程序。
     app = Report()
     app.run()
+
+    # 提示结束。
+    end = time.time()
+    print('-' * 60)
+    print(
+        f'Finished in {round(end-start, 2)} seconds: {app.success} success, {app.done} done, {app.fail} failed.')

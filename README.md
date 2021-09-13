@@ -29,7 +29,9 @@
 1. 开始之前，你需要先下载这两个软件（教程结束后可以卸载）：
 
      - [微信电脑版](https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe)
+
      - [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe)
+
 2. 抓包获取Cookie。
 
      1. 打开Fiddler，点击`Tools`下的`Options`，对照下面三张图检查配置。
@@ -84,7 +86,8 @@
 
 ## TODO
 
-1. 完善当前不在校的自动填报数据。
+1. 支持当前不在校学生的填报。
+2. 支持研究生网上平台的填报。
 
 ---
 
