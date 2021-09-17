@@ -18,7 +18,6 @@
 
 - **本项目仅适用于：微信小程序 ->  “uestc学生情况报送”！**
 - 工作流将自动在每日的**00:30**发起上报，全过程无需用户执行任何操作。
-- 本项目的思路有参考[checkmate1816/uestc_temperature_report](https://github.com/checkmate1816/uestc_temperature_report)，但使用了Python进行重构。
 - 对代码改进有任何好的建议，欢迎提`Issues`，或者直接`PR`！我期待看到不同的想法！
 - 如果对您有帮助，请顺手点个`Star`吧~
 
