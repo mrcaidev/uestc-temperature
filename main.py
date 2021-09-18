@@ -16,6 +16,7 @@ class Report:
         # 请求头，后续会加入 cookie。
         self.headers = {
             'content-type': 'application/json',
+            'Connection': 'close'
         }
 
         # 未返校学生的站点和数据。
@@ -165,7 +166,7 @@ class Report:
 
 if __name__ == '__main__':
     # 睡眠随机时间。
-    time.sleep(random.randint(0, 60))
+    time.sleep(random.randint(0, 10))
     # 提示开始。
     start = time.time()
     print('-' * 60)
