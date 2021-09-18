@@ -1,6 +1,7 @@
 import requests
 import sys
 import time
+import random
 
 
 class Report:
@@ -163,6 +164,8 @@ class Report:
 
 
 if __name__ == '__main__':
+    # 睡眠随机时间。
+    time.sleep(random.randint(0, 60))
     # 提示开始。
     start = time.time()
     print('-' * 60)
