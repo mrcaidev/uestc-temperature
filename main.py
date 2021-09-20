@@ -54,7 +54,7 @@ class Report:
         # 尝试对查询站点发起请求。
         try:
             response = requests.get(
-                'https://jzsz.uestc.edu.cn/wxvacation/checkRegisterNew', headers=self.headers)
+                'https://jzsz.uestc.edu.cn/wxvacation/checkRegisterNew', headers=self.headers, verify=False)
         except Exception as e:
             self.fail += 1
             print(e)
@@ -118,7 +118,7 @@ class Report:
         # 尝试对上报站点发起请求。
         try:
             response = requests.post(
-                url, headers=self.headers, data=str(data).encode('utf-8'))
+                url, headers=self.headers, data=str(data).encode('utf-8'), verify=False)
         except Exception as e:
             self.fail += 1
             print(e)
