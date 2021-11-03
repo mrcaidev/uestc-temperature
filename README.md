@@ -1,7 +1,5 @@
 # UESTC_Temperature
 
----
-
 > 关于我，欢迎关注：
 >
 > Github 主页：[MrCaiDev](https://github.com/MrCaiDev)
@@ -10,25 +8,22 @@
 >
 > 工作邮箱：yuwangcai@std.uestc.edu.cn
 
----
-
 ## 项目介绍
 
 电子科技大学（UESTC）每日体温自动填报。
 
-- **本项目仅适用于：微信小程序 ->  “uestc学生情况报送”！**
-- 工作流将自动在每日的**00:30**发起上报，全过程无需用户执行任何操作。
-- 对代码改进有任何好的建议，欢迎提`Issues`，或者直接`PR`！我期待看到不同的想法！
-- 如果对您有帮助，请顺手点个`Star`吧~
-
----
+- 本项目仅适用于下列微信小程序：
+  - 智慧学工->疫情防控；
+  - UESTC学生情况报送。
+- 工作流将自动在每日的**01:30**发起上报，略有几分钟延迟为正常状况，全过程无需用户执行任何操作。
+- 对代码改进有任何好的建议，欢迎提`Issues`，或者直接`PR`！
+- 如果对您有帮助，请顺手点个⭐`Star`⭐吧~
 
 ## 使用方法
 
 1. 开始之前，你需要先下载这两个软件（教程结束后可以卸载）：
 
      - [微信电脑版](https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe)
-
      - [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe)
 
 2. 抓包获取Cookie。
@@ -57,7 +52,7 @@
 
           ![检测](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/9.png)
 
-     4. 打开微信小程序“uestc学生情况报送”。
+     4. 打开微信小程序（智慧学工疫情防控 或 UESTC学生情况报送）。
 
           ![小程序](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/10.png)
 
@@ -81,16 +76,12 @@
 
 4. 至此配置全部完成，你可以在第二天检查是否成功填报；如果没有，请通过`Issues`联系我。微信电脑版和Fiddler现在可以卸载。
 
----
-
 ## TODO
 
 1. 支持当前不在校学生的填报。
 2. 支持研究生网上平台的填报。
 
----
-
 ## 注意事项
 
 - 本项目仅供学习参考之用，如果因为本项目导致意外情况的发生（几率极小），本项目及其作者不承担相应责任。
-- 目前发现Cookie会过期，保质期未知！
+- 目前发现Cookie可能会过期，保质期未知！
