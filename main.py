@@ -54,7 +54,7 @@ class Report:
         # 尝试对查询站点发起请求。
         try:
             response = requests.get(
-                "https://jzsz.uestc.edu.cn/wxvacation/checkRegisterNew",
+                "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/checkRegisterNew",
                 headers=self.headers,
                 verify=False,
             )
