@@ -1,4 +1,4 @@
-name: uestc_temperature
+name: Daily report
 
 on:
   workflow_dispatch:
