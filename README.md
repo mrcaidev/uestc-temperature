@@ -1,4 +1,4 @@
-# UESTC_Temperature
+# uestc-temperature
 
 > 关于我，欢迎关注：
 >
@@ -29,34 +29,34 @@
 
    3. 返回HttpCanary，点击右下角按钮，开始抓包；
 
-     ![1](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2021-11-10-13-41-58.png)
+     ![1](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-41-58.png)
 
    4. 返回微信，进入“疫情防控”；
 
    5. 返回HttpCanary，找到这个包：
 
      <table><tr>
-     <td><img src="https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2021-11-10-13-44-16.png" width=300 border=0></td>
-     <td><img src="https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2021-11-10-13-45-14.png" width=300 border=0></td>
+     <td><img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-44-16.png" width=300 border=0></td>
+     <td><img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-45-14.png" width=300 border=0></td>
      </tr></table>
 
    6. 在“请求”一栏的最下方，就能找到你的cookie。我们需要的是`SESSION=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`那一段，后面的不管。复制下来，待会要用到。
 
-     ![2](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2021-11-10-13-46-00.png)
+     ![2](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-46-00.png)
 
 2. 部署Action。
 
    1. 将本仓库`Fork`到自己的仓库里；
 
-     ![3](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/1.png)
+     ![3](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/1.png)
 
    2. 点击`Settings`→`Secrets`→`New repository secret`。
 
-     ![4](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2.png)
+     ![4](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2.png)
 
    3. 在`Name`中填入`COOKIES`，在`Value`中填入刚刚记录的cookie；如果有多个人的cookie，就用`#`隔开。最后点击`Add Secret`。
 
-     ![5](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/3.png)
+     ![5](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/3.png)
 
 ## TODO
 
