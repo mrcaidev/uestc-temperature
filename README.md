@@ -29,7 +29,7 @@
 
    3. 返回HttpCanary，点击右下角按钮，开始抓包；
 
-     ![1](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-41-58.png)
+     <img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-41-58.png" width=300 border=0>
 
    4. 返回微信，进入“疫情防控”；
 
@@ -42,7 +42,7 @@
 
    6. 在“请求”一栏的最下方，就能找到你的cookie。我们需要的是`SESSION=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`那一段，后面的不管。复制下来，待会要用到。
 
-     ![2](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-46-00.png)
+     <img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-46-00.png" width=300 border=0>
 
 2. 部署Action。
 
