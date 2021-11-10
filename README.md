@@ -14,7 +14,7 @@
 
 电子科技大学（UESTC）每日体温自动填报。
 
-- 本项目仅适用于微信小程序“智慧学工->疫情防控”；
+- 本项目仅适用于微信小程序**智慧学工→疫情防控**；
 - 工作流将自动在每日的**01:30**发起上报，略有几分钟延迟为正常状况，全过程无需用户执行任何操作。
 - 对代码改进有任何好的建议，欢迎提`Issues`，或者直接`PR`！
 - 如果对您有帮助，请顺手点个⭐`Star`⭐吧~
@@ -48,15 +48,19 @@
 
    1. 将本仓库`Fork`到自己的仓库里；
 
-     ![3](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/1.png)
+    ![1](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/1.png)
 
    2. 点击`Settings`→`Secrets`→`New repository secret`。
 
-     ![4](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2.png)
+    ![2](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2.png)
 
    3. 在`Name`中填入`COOKIES`，在`Value`中填入刚刚记录的cookie；如果有多个人的cookie，就用`#`隔开。最后点击`Add Secret`。
 
-     ![5](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/3.png)
+    ![3](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/3.png)
+
+   4. 完成后，进入`Actions`界面。工作流默认会自动开启，但也请人工复查防止意外。你也可以手动执行工作流，检验程序能否执行。
+
+    ![4](images/2021-11-10-17-00-54.png)
 
 ## TODO
 
