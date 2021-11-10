@@ -32,7 +32,7 @@ class Report:
             "todayMorningTemperature": "36°C~36.5°C",
             "yesterdayEveningTemperature": "36°C~36.5°C",
             "yesterdayMiddayTemperature": "36°C~36.5°C",
-            "location": "四川省成都市郫都区银杏大道",
+            "location": "四川省成都市成华区一环路东一段240号",
         }
 
         # 记录上报结果。
@@ -54,7 +54,7 @@ class Report:
         # 尝试对查询站点发起请求。
         try:
             response = requests.get(
-                "https://jzsz.uestc.edu.cn/wxvacation/checkRegisterNew",
+                "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/checkRegisterNew",
                 headers=self.headers,
                 verify=False,
             )
