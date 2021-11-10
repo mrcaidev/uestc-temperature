@@ -3,7 +3,7 @@
 > 关于我，欢迎关注：
 >
 > 个人博客：[mrcai.space](https://mrcai.space)
-> 
+>
 > Github 主页：[MrCaiDev](https://github.com/MrCaiDev)
 >
 > 个人邮箱：1014305148@qq.com
@@ -14,69 +14,49 @@
 
 电子科技大学（UESTC）每日体温自动填报。
 
-- 本项目仅适用于下列微信小程序：
-  - 智慧学工->疫情防控；
-  - UESTC学生情况报送。
+- 本项目仅适用于微信小程序“智慧学工->疫情防控”；
 - 工作流将自动在每日的**01:30**发起上报，略有几分钟延迟为正常状况，全过程无需用户执行任何操作。
 - 对代码改进有任何好的建议，欢迎提`Issues`，或者直接`PR`！
 - 如果对您有帮助，请顺手点个⭐`Star`⭐吧~
 
 ## 使用方法
 
-1. 开始之前，你需要先下载这两个软件（教程结束后可以卸载）：
+1. 抓取cookie。
 
-     - [微信电脑版](https://dldir1.qq.com/weixin/Windows/WeChatSetup.exe)
-     - [Fiddler Classic](https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe)
+   1. 先在手机上装[HttpCanary](http://a.downxy.com/anzhuo/httpcanary3.3.6_anfensi.com.apk)，并根据软件的提示授予权限、安装证书（后面的ROOT和教程可以直接跳过）；
 
-2. 抓包获取Cookie。
+   2. 进入微信小程序“智慧学工”下的“应用中心”；
 
-     1. 打开Fiddler，点击`Tools`下的`Options`，对照下面三张图检查配置。
+   3. 返回HttpCanary，点击右下角按钮，开始抓包；
 
-          ![General栏](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/1.png)
+     ![1](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2021-11-10-13-41-58.png)
 
-          ![HTTPS栏](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/2.png)
+   4. 返回微信，进入“疫情防控”；
 
-          ![Connections栏](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/3.png)
+   5. 返回HttpCanary，找到这个包：
 
-     2. 为Fiddler安装证书，如下面的流程所示。
+     <table><tr>
+     <td><img src="https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2021-11-10-13-44-16.png" width=300 border=0></td>
+     <td><img src="https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2021-11-10-13-45-14.png" width=300 border=0></td>
+     </tr></table>
 
-          ![入口](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/4.png)
+   6. 在“请求”一栏的最下方，就能找到你的cookie。我们需要的是`SESSION=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`那一段，后面的不管。复制下来，待会要用到。
 
-          ![提示](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/5.png)
+     ![2](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2021-11-10-13-46-00.png)
 
-          ![确认](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/6.png)
+2. 部署Action。
 
-          ![成功](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/7.png)
+   1. 将本仓库`Fork`到自己的仓库里；
 
-     3. 确认证书成功安装后，重启Fiddler。
+     ![3](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/1.png)
 
-          ![入口](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/8.png)
+   2. 点击`Settings`→`Secrets`→`New repository secret`。
 
-          ![检测](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/9.png)
+     ![4](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/2.png)
 
-     4. 打开微信小程序（智慧学工疫情防控 或 UESTC学生情况报送）。
+   3. 在`Name`中填入`COOKIES`，在`Value`中填入刚刚记录的cookie；如果有多个人的cookie，就用`#`隔开。最后点击`Add Secret`。
 
-          ![小程序](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/10.png)
-
-     5. 在Fiddler中找到这个数据包，里面存放着你的Cookie。
-
-          ![数据包](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/11.png)
-
-3. 将Cookie添加到仓库。
-
-     1. 将本仓库`Fork`到自己的仓库中。
-
-          ![Fork](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/14.png)
-
-     2. 点击`Settings`→`Secrets`→`New repository secret`。
-
-          ![secrets](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/12.png)
-
-     3. 在`Name`中填入`COOKIES`，在`Value`中填入刚刚记录的Cookie；如果有多个人的Cookie，就用`#`隔开。最后点击`Add Secret`。
-
-          ![填入信息](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/tutorial_images/13.png)
-
-4. 至此配置全部完成，你可以在第二天检查是否成功填报；如果没有，请通过`Issues`联系我。微信电脑版和Fiddler现在可以卸载。
+     ![5](https://raw.githubusercontent.com/MrCaiDev/uestc_temperature/master/images/3.png)
 
 ## TODO
 
