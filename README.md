@@ -58,7 +58,7 @@
 
     ![3](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/3.png)
 
-   4. 完成后，进入`Actions`界面。工作流默认会自动开启，但也请人工复查防止意外。你也可以手动执行工作流，检验程序能否执行。
+   4. 完成后，进入`Actions`界面。被`Fork`仓库的工作流默认不开启，请手动打开（只要手动打开一次就行）。你也可以手动执行工作流，检验程序能否执行。
 
     ![4](images/2021-11-10-17-00-54.png)
 
