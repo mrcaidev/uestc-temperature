@@ -135,11 +135,18 @@ class ReportTask:
         else:
             print('Success.')
 
-    def run(self):
-        """Run report task."""
+    def run(self) -> bool:
+        """Run report task.
+
+        Returns:
+            `True` on success, or `False` on failure.
+        """
         try:
             status = self._check_status()
             if status != Status.reported:
                 self._upload_data(status)
         except ReportError as e:
             print(e)
+            return False
+        else:
+            return True

@@ -20,7 +20,13 @@ if __name__ == '__main__':
 
     # Run tasks.
     # Async codes not adopted to ensure a higher rate of success.
+    all_success = True
     for index, session_id in enumerate(session_ids):
         print(f'Reporting for student No.{index+1}:', end=' ')
         task = ReportTask(session_id)
-        task.run()
+        success = task.run()
+        if not success:
+            all_success = False
+
+    if not all_success:
+        raise Exception('Failed')
