@@ -6,9 +6,9 @@
 >
 > Github 主页：[MrCaiDev](https://github.com/MrCaiDev)
 >
-> 个人邮箱：1014305148@qq.com
+> 个人邮箱：[1014305148@qq.com](mailto:1014305148@qq.com)
 >
-> 工作邮箱：yuwangcai@std.uestc.edu.cn
+> 工作邮箱：[yuwangcai@std.uestc.edu.cn](mailto:yuwangcai@std.uestc.edu.cn)
 
 ## 项目介绍
 
@@ -24,43 +24,42 @@
 1. 抓取cookie。
 
    1. 先在手机上装[HttpCanary](http://a.downxy.com/anzhuo/httpcanary3.3.6_anfensi.com.apk)，并根据软件的提示授予权限、安装证书（后面的ROOT和教程可以直接跳过）；
-
    2. 进入微信小程序“智慧学工”下的“应用中心”；
-
    3. 返回HttpCanary，点击右下角按钮，开始抓包；
 
-     <img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-41-58.png" width=300 border=0>
+   <img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-41-58.png" width=300 border=0>
 
    4. 返回微信，进入“疫情防控”；
-
    5. 返回HttpCanary，找到这个包：
 
-     <table><tr>
+   <table><tr>
      <td><img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-44-16.png" width=300 border=0></td>
      <td><img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-45-14.png" width=300 border=0></td>
      </tr></table>
 
    6. 在“请求”一栏的最下方，就能找到你的cookie。我们需要的是`SESSION=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`那一段，后面的不管。复制下来，待会要用到。
 
-     <img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-46-00.png" width=300 border=0>
+      > 注意：只需要“SESSION=”后面那串代码，“SESSION=”这几个字本身不需要！
+
+   <img src="https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2021-11-10-13-46-00.png" width=300 border=0>
 
 2. 部署Action。
 
    1. 将本仓库`Fork`到自己的仓库里；
 
-    ![1](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/1.png)
+   ![1](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/1.png)
 
    2. 点击`Settings`→`Secrets`→`New repository secret`。
 
-    ![2](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2.png)
+   ![2](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/2.png)
 
    3. 在`Name`中填入`COOKIES`，在`Value`中填入刚刚记录的cookie；如果有多个人的cookie，就用`#`隔开。最后点击`Add Secret`。
 
-    ![3](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/3.png)
+   ![3](https://raw.githubusercontent.com/MrCaiDev/uestc-temperature/master/images/3.png)
 
    4. 完成后，进入`Actions`界面。被`Fork`仓库的工作流默认不开启，请手动打开（只要手动打开一次就行）。你也可以手动执行工作流，检验程序能否执行。
 
-    ![4](images/2021-11-10-17-00-54.png)
+   ![4](images/2021-11-10-17-00-54.png)
 
 ## TODO
 
