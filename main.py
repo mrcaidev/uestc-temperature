@@ -15,9 +15,8 @@ if __name__ == '__main__':
     print(time.strftime('%F %H:%M:%S').center(60))
     print(f'{"-"*30}'.center(60))
 
-    # Init tasks.
-    ReportTask.read_api()
-    ReportTask.read_headers()
+    # Read configuration files.
+    ReportTask.read_config()
 
     # Run tasks.
     # Async codes not adopted to ensure a higher rate of success.

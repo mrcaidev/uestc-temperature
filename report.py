@@ -1,3 +1,4 @@
+import os
 from json import load
 
 import requests
@@ -34,31 +35,27 @@ class ReportTask:
         })
 
     @classmethod
-    def read_api(cls) -> None:
-        """Read school's API from JSON file.
+    def read_config(cls) -> None:
+        """Read headers and API from JSON config.
 
         Note:
-            API may change over time, please regularly check out.
+            Headers in JSON file does not contain any specified data.
         """
-        with open('api.json', 'r', encoding='utf-8') as fr:
+        # Read headers.
+        with open(os.path.join('config', 'headers.json'), 'r', encoding='utf-8') as fr:
+            cls.headers: dict = load(fr)
+
+        # Read API.
+        with open(os.path.join('config', 'api.json'), 'r', encoding='utf-8') as fr:
             api_dict: dict = load(fr)
 
+        # Parse API.
         cls.check_url: str = api_dict['checkUrl']
         cls.referer: str = api_dict['referer']
         cls.returned_url: str = api_dict['returnedUrl']
         cls.returned_data: dict = api_dict['returnedData']
         cls.unreturned_url: str = api_dict['unreturnedUrl']
         cls.unreturned_data: dict = api_dict['unreturnedData']
-
-    @classmethod
-    def read_headers(cls) -> None:
-        """Read headers from JSON file.
-
-        Note:
-            The headers currently read applies to all student.
-        """
-        with open('headers.json', 'r', encoding='utf-8') as fr:
-            cls.headers: dict = load(fr)
 
     def _check_status(self) -> Status:
         """Check the current status of the student.
