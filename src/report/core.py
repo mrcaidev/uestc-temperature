@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 import requests
 import urllib3
 
@@ -21,7 +23,7 @@ class Report:
         response = requests.request(
             method=api["method"],
             url=api["url"],
-            data=api["data"],
+            data=json.dumps(api["data"]),
             headers=self.__headers,
             verify=False,
         )
@@ -43,9 +45,8 @@ class Report:
         else:
             raise ReportException("invalid status")
 
-    def upload(self) -> None:
-        status = self.get_status().name
-        response = self.__request(status)
+    def upload(self, status: ReportStatus) -> None:
+        response = self.__request(status.name)
 
         if response["status"] == False:
             raise ReportException("invalid post data")
@@ -54,7 +55,8 @@ class Report:
 def run(session_id: str) -> tuple[bool, str]:
     task = Report(session_id)
     try:
-        task.upload()
+        status = task.get_status()
+        task.upload(status)
     except ReportException as e:
         return False, e
     else:
