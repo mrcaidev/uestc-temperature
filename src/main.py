@@ -1,7 +1,6 @@
 import sys
 
 import report
-from report.status import ReportStatus
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
