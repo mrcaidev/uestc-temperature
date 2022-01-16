@@ -2,5 +2,7 @@ from enum import IntEnum
 
 
 class ReportStatus(IntEnum):
-    unreturned = 0
-    returned = 1
+    """Status of the student."""
+
+    unreturned = 0  # The student is away from school.
+    returned = 1  # The student is at school.

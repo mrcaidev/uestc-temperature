@@ -1,3 +1,4 @@
+# UESTC official APIs about reporting.
 api_dict = {
     "check": {
         "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/checkRegisterNew",
@@ -21,7 +22,7 @@ api_dict = {
             "province": "江苏省",
             "city": "苏州市",
             "county": "常熟市",
-        },
+        },  # You can modify these data as you like.
     },
     "returned": {
         "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/monitorRegisterForReturned",
@@ -33,10 +34,11 @@ api_dict = {
             "yesterdayMiddayTemperature": "36.5°C~36.9°C",
             "location": "四川省成都市郫都区丹桂路",
             "healthColor": "绿色",
-        },
+        },  # You can modify these data as you like.
     },
 }
 
+# Common request headers, regardless of student identities.
 common_headers = {
     "connection": "close",
     "encode": "false",
