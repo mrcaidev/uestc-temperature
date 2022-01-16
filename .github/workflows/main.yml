@@ -3,7 +3,7 @@ name: Daily report
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 17 * * *"
+    - cron: "0 16 * * *"
 
 env:
   TZ: 'Asia/Shanghai'
@@ -11,13 +11,13 @@ env:
 jobs:
 
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-20.04
 
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: '3.8'
         architecture: 'x64'
     - run:
         python -m pip install --upgrade pip
