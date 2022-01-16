@@ -1,5 +1,7 @@
 # uestc-temperature
 
+**由于近日 GitHub 工作流无法正常建立与学校站点的网络连接，本项目已停止对自动化的支持；本地私有部署方法请参考 [README.md 的相关章节](https://github.com/MrCaiDev/uestc-temperature#本地私有部署)。**
+
 ## 项目介绍
 
 电子科技大学本科生每日体温自动填报。
