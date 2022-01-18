@@ -1,7 +1,5 @@
 # uestc-temperature
 
-**由于近日 GitHub 工作流无法正常建立与学校站点的网络连接，本项目已停止对自动化的支持；本地私有部署方法请参考 [README.md 的相关章节](https://github.com/MrCaiDev/uestc-temperature#本地私有部署)。**
-
 ## 项目介绍
 
 电子科技大学本科生每日体温自动填报。
@@ -9,7 +7,8 @@
 - 本项目仅适用于微信小程序**智慧学工 -> 疫情防控**；
 - 工作流将在每日的 **00:30** 左右自动上报，略有几分钟延迟为正常状况，配置完成后无需用户执行任何操作。
 - 支持托管多人自动上报，见[部署方法](https://github.com/MrCaiDev/uestc-temperature#部署方法)。
-- 如果对您有帮助，请顺手点个 ⭐`Star`⭐ 吧！
+- 支持在校和离校学生的填报。
+- 如果对您有帮助，请顺手点个 ⭐Star⭐ 吧！
 
 ## 部署方法
 
@@ -32,14 +31,16 @@
 
 ### 本地私有部署
 
-> 需要本地拥有 Python 环境（>=3.6）；
->
+> 需要本地拥有 Python 环境，最低兼容版本为 3.9；若您的 Python 版本在 3.6-3.8 间，请手动清除类型注释，或在具有类型注释的 Python 文件开头添加 `from __future__ import annotations`。
+> 
+> 本项目仅在 Ubuntu-20.04 上得到测试，若 windows 下无法运行，请在 Issue 中提供具体信息。
+> 
 > 本项目不提供本地的自动化支持，需要部署者自行解决每日自动化问题。（如 PowerAutomate 等自动化软件）
 
 - 将仓库克隆到本地：`git clone https://github.com/MrCaiDev/uestc-temperature.git`
 - 进入项目根目录：`cd uestc-temperature`
 - 下载项目依赖：`pip install -r requirements.txt`
-- 执行脚本：`python -u ./src/main.py xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
+- 执行脚本：`python -u src/main.py xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
 
 ## 注意事项
 
