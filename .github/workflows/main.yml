@@ -3,7 +3,7 @@ name: Daily report
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 16 * * *"
+    - cron: "0 17 * * *"
 
 env:
   TZ: 'Asia/Shanghai'
