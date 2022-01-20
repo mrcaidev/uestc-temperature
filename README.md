@@ -31,10 +31,10 @@
 
 ### 本地私有部署
 
-> 需要本地拥有 Python 环境，最低兼容版本为 3.9；若您的 Python 版本在 3.6-3.8 间，请手动清除类型注释，或在具有类型注释的 Python 文件开头添加 `from __future__ import annotations`。
-> 
-> 本项目仅在 Ubuntu-20.04 上得到测试，若 windows 下无法运行，请在 Issue 中提供具体信息。
-> 
+> 需要本地拥有 Python 环境，最低兼容版本为 3.6。
+>
+> 本项目仅在 Ubuntu-20.04 上通过测试，若在其他系统下无法运行，请在 Issue 中提供具体信息。
+>
 > 本项目不提供本地的自动化支持，需要部署者自行解决每日自动化问题。（如 PowerAutomate 等自动化软件）
 
 - 将仓库克隆到本地：`git clone https://github.com/MrCaiDev/uestc-temperature.git`

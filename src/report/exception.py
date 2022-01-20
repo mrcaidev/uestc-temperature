@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 class ReportException(Exception):
     """Exception in report module field."""
 
