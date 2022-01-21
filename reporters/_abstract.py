@@ -9,31 +9,38 @@ from urllib3 import Retry
 
 class AbstractReporter:
 
-    MAX_RETRIES = 5
+    MAX_RETRIES = 50
     REQ_TIMEOUT = 5
 
     def __init__(self, school: str) -> None:
-        self.__school = school
-        self.__sites = self.__read_json('sites')
-        self.__headers = self.__read_json('headers')
         self.__cookies = {}
+        self.__read_json(school)
         self.__create_session()
 
-    def __read_json(self, filename: str) -> dict:
+    def __read_json(self, school: str) -> dict:
         """Read config json under config directory.
 
         Args:
-            The filename of config without extension.
+            The school whose config JSON will be read.
         """
-        filepath = os.path.join('config', self.__school, f'{filename}.json')
+        self.__headers = {}
+        self.__sites = {}
+
+        filepath = os.path.join('config', f'{school}.json')
         try:
             with open(filepath, 'r', encoding='utf-8') as fr:
-                return json.load(fr)
+                conf: dict = json.load(fr)
+                self.__headers = conf.get('headers', {})
+                self.__sites = {
+                    site.pop('name'): site for site in conf.get('sites', [])
+                }
+
         except FileNotFoundError:
-            return {}
+            print(f'config not found: config/{school}.json')
+            os._exit(-1)
 
     def __create_session(self) -> None:
-        """Create a session for the student."""
+        """Create a new session."""
         self.__session = requests.Session()
         retries = Retry(
             total=self.MAX_RETRIES,
