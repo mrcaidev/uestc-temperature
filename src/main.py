@@ -1,20 +1,21 @@
 import sys
+import time
 
-import report
+from reporters import *
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        raise Exception("session id required")
+    print(f'[{time.strftime("%F %H:%M:%S")}]', end=' ')
+
+    # Parse command line arguments.
+    if len(sys.argv) < 2:
+        raise Exception("user info not provided")
     else:
-        session_ids = sys.argv[1].split("#")
+        school, *info = sys.argv[1].split("#")
 
-    all_success = True
-    for index, session_id in enumerate(session_ids):
-        print(f"Reporting for student No.{index+1}:", end=" ")
-        success, message = report.run(session_id)
-        print(message)
-        if not success:
-            all_success = False
-
-    if not all_success:
-        raise Exception("failed as shown above")
+    # Execute `run()` defined by this school.
+    try:
+        result = eval(f'{school}.run(info)')
+    except NameError:
+        print(f'module not found: {school}')
+    else:
+        print(result)
