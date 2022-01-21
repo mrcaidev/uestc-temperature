@@ -1,4 +1,15 @@
-# 🌡️ Thermoflash 🎉
+<h1 align="center"> 🌡️ Thermoflash 🎉 </h1>
+
+<p align="center">
+  <img src="https://img.shields.io/github/license/mrcaidev/thermoflash"/>
+  <img src="https://img.shields.io/pypi/pyversions/requests"/>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/github/stars/mrcaidev/thermoflash"/>
+  <img src="https://img.shields.io/github/forks/mrcaidev/thermoflash"/>
+  <img src="https://img.shields.io/github/issues/mrcaidev/thermoflash"/>
+  <img src="https://img.shields.io/github/issues-closed/mrcaidev/thermoflash"/>
+</p>
 
 为各高校学生提供自动健康打卡服务。
 
@@ -10,20 +21,19 @@
 | :----------: | :-------------------------------------: |
 | 电子科技大学 | [mrcaidev](https://github.com/mrcaidev) |
 
-## 部署教程
+## 📚 部署教程
 
-如果你只是在寻找一个打卡的工具，而并不关心它的实现原理，则推荐参考 [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/thermoflash/wiki/GitHub-Actions-自动化部署教程)。
+- 如果你只是想找一个打卡工具，那么请阅读 [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/thermoflash/wiki/GitHub-Actions-自动化部署教程)。
+- 如果你想自己玩玩这个程序，做一些自定义，那么请阅读[本地私有化部署教程](https://github.com/mrcaidev/thermoflash/wiki/本地私有化部署教程)。
 
-如果你拥有 Python 开发环境，并且想要自定义一些功能，则推荐参考[本地私有化部署教程](https://github.com/mrcaidev/thermoflash/wiki/本地私有化部署教程)。
-
-## FAQ
+## ❓ FAQ
 
 如果你在使用该程序的过程中遇到了任何问题，请先查看本项目 Wiki 的 [FAQ](https://github.com/mrcaidev/thermoflash/wiki/FAQ)。
 
-## 免责声明
+## 📜 免责声明
 
 本项目仅供学习参考之用，如果因为本项目导致意外情况的发生，本项目及其作者不承担相应责任。
 
-## 许可证
+## 💳 许可证
 
 [MIT](https://github.com/mrcaidev/thermoflash/blob/master/LICENSE)
