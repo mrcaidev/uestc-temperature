@@ -53,6 +53,17 @@ class AbstractReporter:
         """
         self.__cookies.update(kwargs)
 
+    def modify_data(self, api: str, **kwargs) -> None:
+        """Modify data of specified api.
+
+        Args:
+            api: The name of API whose data will be modified.
+            **kwargs: New data set.
+        """
+        if 'data' not in self.__sites[api].keys():
+            return
+        self.__sites[api]['data'].update(kwargs)
+
     def request(self, api: str) -> dict:
         """Issue request towards the specified api.
 
@@ -63,16 +74,15 @@ class AbstractReporter:
         response = self.__session.request(
             method=site.get('method', 'get'),
             url=site.get('url', ''),
-            data=json.dumps(site.get('data', {})),
             headers=self.__headers,
             cookies=self.__cookies,
-            timeout=self.REQ_TIMEOUT
+            timeout=self.REQ_TIMEOUT,
+            json=site.get('data', {}),
         )
         return response.json()
 
 
 class ReportException(Exception):
-
     def __init__(self, message: str, *args: object) -> None:
         super().__init__(*args)
         self.__message = message

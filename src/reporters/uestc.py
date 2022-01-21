@@ -16,7 +16,7 @@ class UestcReporter(AbstractReporter):
         Returns:
             Details about report result.
         """
-        check_response = self.request('check')
+        check_response = self.request('checkRegisterNew')
         data: dict = check_response['data']
 
         # 1. An error occurred during request.
@@ -27,10 +27,10 @@ class UestcReporter(AbstractReporter):
             return 'reported already'
         # 3. He is away from school.
         if data['schoolStatus'] == 0:
-            upload_response = self.request('unreturned')
+            upload_response = self.request('monitorRegister')
         # 4. He is at school.
         elif data['schoolStatus'] == 1:
-            upload_response = self.request('returned')
+            upload_response = self.request('monitorRegisterForReturned')
         # 5. This branch won't be entered. Just for the sake of caution.
         else:
             raise ReportException('invalid status')

@@ -1,10 +1,20 @@
 {
-  "check": {
+  "checkBind": {
+    "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/login/checkBind",
+    "method": "post",
+    "data": {}
+  },
+  "bindUserInfo": {
+    "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/login/bindUserInfo",
+    "method": "post",
+    "data": {}
+  },
+  "checkRegisterNew": {
     "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/checkRegisterNew",
     "method": "get",
     "data": {}
   },
-  "unreturned": {
+  "monitorRegister": {
     "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/monitorRegister",
     "method": "post",
     "data": {
@@ -23,7 +33,7 @@
       "county": "常熟市"
     }
   },
-  "returned": {
+  "monitorRegisterForReturned": {
     "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/monitorRegisterForReturned",
     "method": "post",
     "data": {
