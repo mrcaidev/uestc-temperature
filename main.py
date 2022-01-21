@@ -8,7 +8,8 @@ if __name__ == "__main__":
 
     # Parse command line arguments.
     if len(sys.argv) < 2:
-        raise Exception("user info not provided")
+        print('PASSWORD not provided')
+        exit(-1)
     else:
         school, *info = sys.argv[1].split("#")
 
