@@ -6,8 +6,8 @@
   <br/>
   <img src="https://img.shields.io/github/stars/mrcaidev/thermoflash"/>
   <img src="https://img.shields.io/github/forks/mrcaidev/thermoflash"/>
-  <img src="https://img.shields.io/github/issues/mrcaidev/thermoflash"/>
-  <img src="https://img.shields.io/github/issues-closed/mrcaidev/thermoflash"/>
+  <img src="https://img.shields.io/github/issues/mrcaidev/thermoflash?color=green"/>
+  <img src="https://img.shields.io/github/issues-closed/mrcaidev/thermoflash?color=purple"/>
 </p>
 
 为各高校学生提供自动健康打卡服务。
