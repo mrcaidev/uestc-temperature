@@ -2,9 +2,8 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/license/mrcaidev/thermoflash"/>
-  <img src="https://img.shields.io/pypi/pyversions/requests"/>
-</p>
-<p align="center">
+  <img src="https://img.shields.io/badge/python-3.6%2B-green"/>
+  <br/>
   <img src="https://img.shields.io/github/stars/mrcaidev/thermoflash"/>
   <img src="https://img.shields.io/github/forks/mrcaidev/thermoflash"/>
   <img src="https://img.shields.io/github/issues/mrcaidev/thermoflash"/>
