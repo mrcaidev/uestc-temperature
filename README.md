@@ -18,13 +18,12 @@
 
 ## 📚 部署教程
 
-- 如果你只是想找个自动打卡的工具，那么请阅读 [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/GitHub-Actions-自动化部署教程)；
-- 如果你想自己玩玩这个程序，那么请阅读[本地私有化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/本地私有化部署教程)；
-- 如果你想要参与本项目的开发，那么请阅读[开发指南](https://github.com/mrcaidev/uestc-temperature/wiki/开发指南)。
+- 如果您只是想找个打卡工具，那么请阅读 [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/GitHub-Actions-自动化部署教程)；
+- 如果您想自己玩玩这个程序，那么请阅读[本地私有化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/本地私有化部署教程)。
 
 ## ❓ FAQ
 
-如果你在使用该程序的过程中遇到了任何问题，请先查看本项目 Wiki 的 [FAQ](https://github.com/mrcaidev/uestc-temperature/wiki/FAQ)。
+如果你遇到了任何问题，请先查看本项目的 [FAQ](https://github.com/mrcaidev/uestc-temperature/wiki/FAQ)。
 
 ## 📜 免责声明
 
