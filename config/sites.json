@@ -1,0 +1,51 @@
+{
+    "bind": {
+        "method": "POST",
+        "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/login/bindUserInfo",
+        "data": {
+            "sn": "YOUR-STUDENT-NUMBER",
+            "idCard": "YOUR-PASSWORD"
+        }
+    },
+    "cookie": {
+        "method": "POST",
+        "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/login/checkBind",
+        "data": {}
+    },
+    "returned": {
+        "method": "POST",
+        "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/monitorRegisterForReturned",
+        "data": {
+            "healthCondition": "正常",
+            "todayMorningTemperature": "36.5°C~36.9°C",
+            "yesterdayEveningTemperature": "36.5°C~36.9°C",
+            "yesterdayMiddayTemperature": "36.5°C~36.9°C",
+            "location": "四川省成都市郫都区丹桂路",
+            "healthColor": "绿色"
+        }
+    },
+    "status": {
+        "method": "GET",
+        "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/checkRegisterNew",
+        "data": {}
+    },
+    "unreturned": {
+        "method": "POST",
+        "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/monitorRegister",
+        "data": {
+            "currentAddress": "江苏省苏州市常熟市",
+            "remark": "",
+            "healthInfo": "正常",
+            "healthColor": "绿色",
+            "isContactWuhan": 0,
+            "isFever": 0,
+            "isInSchool": 0,
+            "isLeaveChengdu": 1,
+            "isSymptom": 0,
+            "temperature": "36.5°C~36.9°C",
+            "province": "江苏省",
+            "city": "苏州市",
+            "county": "常熟市"
+        }
+    }
+}

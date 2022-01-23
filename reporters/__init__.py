@@ -1,1 +1,1 @@
-from . import uestc
+from .uestc import UestcReporter

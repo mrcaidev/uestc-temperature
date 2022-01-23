@@ -1,60 +1,26 @@
-from __future__ import annotations
-
-from ._abstract import *
+from ._abstract import AbstractReporter
 
 
 class UestcReporter(AbstractReporter):
-    """Reporter for UESTC students."""
-
-    def __init__(self, session_id: str) -> None:
-        super().__init__('uestc')
+    def __init__(self, session_id) -> None:
+        super().__init__()
         self.set_cookie(SESSION=session_id)
 
     def run(self) -> str:
-        """Run report task.
+        status = self.request('status')['data']
 
-        Returns:
-            Details about report result.
-        """
-        check_response = self.request('checkRegisterNew')
-        data: dict = check_response['data']
-
-        # 1. An error occurred during request.
-        if data == None:
-            raise ReportException(check_response['message'])
-        # 2. He has already reported successfully.
-        if data['appliedTimes'] != 0:
+        if status == None:
+            raise Exception('incorrect session id')
+        elif status['appliedTimes'] != 0:
             return 'reported already'
-        # 3. He is away from school.
-        if data['schoolStatus'] == 0:
-            upload_response = self.request('monitorRegister')
-        # 4. He is at school.
-        elif data['schoolStatus'] == 1:
-            upload_response = self.request('monitorRegisterForReturned')
-        # 5. This branch won't be entered. Just for the sake of caution.
+        elif status['schoolStatus'] == 0:
+            response = self.request('unreturned')
+        elif status['schoolStatus'] == 1:
+            response = self.request('returned')
         else:
-            raise ReportException('invalid status')
+            raise Exception('invalid status')
 
-        if upload_response['data'] == True:
+        if response['data'] == True:
             return 'success'
         else:
-            return upload_response['message']
-
-
-def run(info: list[str]) -> str:
-    """Simplified API to call from outside the module.
-
-    Returns:
-        The result of reporting.
-    """
-    if len(info) == 0:
-        return 'session id not provided'
-
-    session_id, = info
-    reporter = UestcReporter(session_id)
-    try:
-        result = reporter.run()
-    except ReportException as e:
-        return e
-    else:
-        return result
+            raise Exception('data not acknowledged')

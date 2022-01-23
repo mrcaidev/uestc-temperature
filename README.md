@@ -1,34 +1,30 @@
-<h1 align="center"> 🌡️ Thermoflash 🎉 </h1>
+<h1 align="center"> 🌡️ UESTC 自动健康打卡 🎉 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/mrcaidev/thermoflash"/>
+  <img src="https://img.shields.io/github/license/mrcaidev/uestc-temperature"/>
   <img src="https://img.shields.io/badge/python-3.6%2B-green"/>
   <br/>
-  <img src="https://img.shields.io/github/stars/mrcaidev/thermoflash"/>
-  <img src="https://img.shields.io/github/forks/mrcaidev/thermoflash"/>
-  <img src="https://img.shields.io/github/issues/mrcaidev/thermoflash?color=green"/>
-  <img src="https://img.shields.io/github/issues-closed/mrcaidev/thermoflash?color=purple"/>
+  <img src="https://img.shields.io/github/stars/mrcaidev/uestc-temperature"/>
+  <img src="https://img.shields.io/github/forks/mrcaidev/uestc-temperature"/>
+  <img src="https://img.shields.io/github/issues/mrcaidev/uestc-temperature?color=green"/>
+  <img src="https://img.shields.io/github/issues-closed/mrcaidev/uestc-temperature?color=purple"/>
 </p>
 
-为各高校学生提供自动健康打卡服务。
+电子科技大学本科生自动健康打卡。
 
-**项目正在起步阶段，欢迎各位积极提 Issue 与 PR！**
+## 💡 项目介绍
 
-目前支持的高校有（按拼音首字母排序）：
-
-|     学校     |                  作者                   |
-| :----------: | :-------------------------------------: |
-| 电子科技大学 | [mrcaidev](https://github.com/mrcaidev) |
+本项目基于 GitHub Actions 实现打卡程序自动化。您只需要手动配置一次，之后项目就能够自动在每日的 00:30 为您上报体温；万一上报失败，您将收到一封邮件提醒。
 
 ## 📚 部署教程
 
-- 如果你只是想找个打卡程序，那么请阅读 [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/thermoflash/wiki/GitHub-Actions-自动化部署教程)；
-- 如果你想自己玩玩这个程序，那么请阅读[本地私有化部署教程](https://github.com/mrcaidev/thermoflash/wiki/本地私有化部署教程)；
-- 如果你想要参与本项目的开发，那么请阅读[开发指南](https://github.com/mrcaidev/thermoflash/wiki/开发指南)。
+- 如果你只是想找个自动打卡的工具，那么请阅读 [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/GitHub-Actions-自动化部署教程)；
+- 如果你想自己玩玩这个程序，那么请阅读[本地私有化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/本地私有化部署教程)；
+- 如果你想要参与本项目的开发，那么请阅读[开发指南](https://github.com/mrcaidev/uestc-temperature/wiki/开发指南)。
 
 ## ❓ FAQ
 
-如果你在使用该程序的过程中遇到了任何问题，请先查看本项目 Wiki 的 [FAQ](https://github.com/mrcaidev/thermoflash/wiki/FAQ)。
+如果你在使用该程序的过程中遇到了任何问题，请先查看本项目 Wiki 的 [FAQ](https://github.com/mrcaidev/uestc-temperature/wiki/FAQ)。
 
 ## 📜 免责声明
 
@@ -36,4 +32,4 @@
 
 ## 💳 许可证
 
-[MIT](https://github.com/mrcaidev/thermoflash/blob/master/LICENSE)
+[MIT](https://github.com/mrcaidev/uestc-temperature/blob/master/LICENSE)
