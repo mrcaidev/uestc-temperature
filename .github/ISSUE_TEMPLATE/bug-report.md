@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: 反馈您遇到的问题，来帮助我们改进。
-title: "【问题反馈】"
+title: ''
 labels: ''
 assignees: ''
 

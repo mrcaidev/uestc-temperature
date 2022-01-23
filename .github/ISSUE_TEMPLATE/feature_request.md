@@ -1,7 +1,7 @@
 ---
 name: Feature request
 about: 提出创意或改进性能。
-title: "【功能改善】"
+title: ''
 labels: ''
 assignees: ''
 
