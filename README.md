@@ -1,4 +1,4 @@
-<h1 align="center"> 🌡️ UESTC 自动健康打卡 🎉 </h1>
+<h1 align="center">🌡️ UESTC 自动健康打卡 🎉</h1>
 
 <p align="center">
   <img src="https://img.shields.io/github/license/mrcaidev/uestc-temperature"/>
@@ -18,8 +18,8 @@
 
 ## 📚 部署教程
 
-- 如果您只是想找个打卡工具，那么请阅读 [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/GitHub-Actions-自动化部署教程)；
-- 如果您想自己玩玩这个程序，那么请阅读[本地私有化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/本地私有化部署教程)。
+- [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/GitHub-Actions-自动化部署教程)：无门槛，推荐大部分用户阅读。
+- [本地私有化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/本地私有化部署教程)：要求有 Python 开发环境，推荐开发者阅读。
 
 ## ❓ FAQ
 
