@@ -1,0 +1,13 @@
+[[source]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+name = "tsinghua"
+
+[packages]
+requests = "*"
+urllib3 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"
