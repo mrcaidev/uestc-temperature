@@ -20,7 +20,7 @@ jobs:
 
       - name: Install packages
         run:
-          pip install -r requirements.txt
+          pip install requests
 
       - name: Run application
         env:
