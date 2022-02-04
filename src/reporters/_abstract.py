@@ -22,9 +22,9 @@ class AbstractReporter:
             'https://', requests.adapters.HTTPAdapter(max_retries=retries))
 
     def __read_json(self) -> None:
-        with open('config/headers.json', 'r', encoding='utf-8') as fr:
+        with open('src/config/headers.json', 'r', encoding='utf-8') as fr:
             self.__session.headers.update(json.load(fr))
-        with open('config/sites.json', 'r', encoding='utf-8') as fr:
+        with open('src/config/sites.json', 'r', encoding='utf-8') as fr:
             self.__sites = json.load(fr)
 
     def set_cookie(self, **kwargs) -> None:
