@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/github/license/mrcaidev/uestc-temperature"/>
-  <img src="https://img.shields.io/badge/python-3.6%2B-green"/>
+  <img src="https://img.shields.io/docker/image-size/mrcaidev/uestc-temperature?label=docker%20image%20size"/>
   <br/>
   <img src="https://img.shields.io/github/stars/mrcaidev/uestc-temperature"/>
   <img src="https://img.shields.io/github/forks/mrcaidev/uestc-temperature"/>
