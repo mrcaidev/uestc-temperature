@@ -19,7 +19,7 @@
 ## 📚 部署教程
 
 - [GitHub Actions 自动化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/GitHub-Actions-自动化部署教程)：无门槛，推荐大部分用户阅读。
-- [本地私有化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/本地私有化部署教程)：要求有 Python 开发环境，推荐开发者阅读。
+- [本地私有化部署教程](https://github.com/mrcaidev/uestc-temperature/wiki/本地私有化部署教程)：要求有 Python 或 Docker 开发环境，推荐开发者阅读。
 
 ## ❓ FAQ
 
