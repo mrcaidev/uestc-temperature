@@ -1,18 +1,23 @@
 import os
-import sys
 import time
 
-from reporters import UestcReporter
+from reporter import Reporter
 
 if __name__ == "__main__":
     print(f'[{time.strftime("%F %H:%M:%S")}]', end=' ')
-    session_ids = os.environ.get('COOKIES')
-    if session_ids == None:
+
+    cookies = os.environ.get('COOKIES')
+    if cookies == None:
         raise Exception('session id not provided')
     else:
-        session_ids = session_ids.split('#')
+        cookies = cookies.split('#')
 
-    for index, session_id in enumerate(session_ids):
-        print(f'Student {index+1}:', end=' ')
-        reporter = UestcReporter(session_id)
-        print(reporter.run())
+    results = []
+    for index, cookie in enumerate(cookies):
+        reporter = Reporter(cookie)
+        result, message = reporter.run()
+        results.append(result)
+        print(f'Student {index+1}: {message}')
+
+    if not all(results):
+        exit(-1)
