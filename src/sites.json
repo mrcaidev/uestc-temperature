@@ -5,12 +5,14 @@
     "data": {
       "sn": "YOUR-STUDENT-NUMBER",
       "idCard": "YOUR-PASSWORD"
-    }
+    },
+    "description": "[未使用] 将 cookie 绑定给用户"
   },
   "cookie": {
     "method": "POST",
     "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/login/checkBind",
-    "data": {}
+    "data": {},
+    "description": "[未使用] 生成 cookie"
   },
   "returned": {
     "method": "POST",
@@ -22,12 +24,14 @@
       "yesterdayMiddayTemperature": "36.5°C~36.9°C",
       "location": "四川省成都市郫都区丹桂路",
       "healthColor": "绿色"
-    }
+    },
+    "description": "在校学生数据"
   },
   "status": {
     "method": "GET",
     "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/checkRegisterNew",
-    "data": {}
+    "data": {},
+    "description": "查询学生状态"
   },
   "unreturned": {
     "method": "POST",
@@ -46,6 +50,7 @@
       "province": "江苏省",
       "city": "苏州市",
       "county": "常熟市"
-    }
+    },
+    "description": "离校学生数据"
   }
 }
