@@ -22,7 +22,7 @@
       "todayMorningTemperature": "36.5°C~36.9°C",
       "yesterdayEveningTemperature": "36.5°C~36.9°C",
       "yesterdayMiddayTemperature": "36.5°C~36.9°C",
-      "location": "四川省成都市郫都区丹桂路",
+      "location": "四川省成都市电子科技大学清水河校区",
       "healthColor": "绿色"
     },
     "description": "在校学生数据"
@@ -37,7 +37,7 @@
     "method": "POST",
     "url": "https://jzsz.uestc.edu.cn/wxvacation/api/epidemic/monitorRegister",
     "data": {
-      "currentAddress": "江苏省苏州市常熟市",
+      "currentAddress": "山西省运城市芮城县",
       "remark": "",
       "healthInfo": "正常",
       "healthColor": "绿色",
@@ -47,9 +47,9 @@
       "isLeaveChengdu": 1,
       "isSymptom": 0,
       "temperature": "36.5°C~36.9°C",
-      "province": "江苏省",
-      "city": "苏州市",
-      "county": "常熟市"
+      "province": "山西省",
+      "city": "运城市",
+      "county": "芮城县"
     },
     "description": "离校学生数据"
   }
