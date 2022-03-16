@@ -46,7 +46,7 @@ class Reporter:
         else:
             return False, "invalid status"
 
-        if response["data"] == True:
+        if response["status"] == True:
             return True, "success"
         else:
             return False, "invalid data"
