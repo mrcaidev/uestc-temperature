@@ -35,7 +35,3 @@
 ## 💳 许可证
 
 [MIT](https://github.com/mrcaidev/uestc-temperature/blob/master/LICENSE)
-
-## 🔗 友情链接
-
-- [uestc-temperature-js](https://github.com/mrcaidev/uestc-temperature-js)：功能一样，不过采用了 JavaScript 实现。
